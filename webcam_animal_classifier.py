@@ -20,7 +20,7 @@ for file in file_list:
         keras_model_files.append(file)
 
 # load model from file
-keras_model_file_i_want_to_use = keras_model_files[-5]
+keras_model_file_i_want_to_use = keras_model_files[0]
 print("Using following model file for predictions:\n{}".format(keras_model_file_i_want_to_use))
 model = keras.models.load_model(keras_model_file_i_want_to_use)
 model.summary()
@@ -29,7 +29,7 @@ model.summary()
 # Write some Text
 
 # dict
-with open(keras_model_files[-3],"r") as f:
+with open(keras_model_files[1],"r") as f:
     class_list = json.load(f)
     class_stats = pd.DataFrame(data={"classes":class_list})
     classes = class_stats["classes"].to_dict()
